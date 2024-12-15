@@ -73,4 +73,86 @@ Installation Steps:
 SCREEN SHOTS:
 -------------------------------------------------------------------
 
+Signup:
+
+![Screenshot 2024-12-15 184249](https://github.com/user-attachments/assets/bffe8d6f-0065-41f5-ab4b-fcbc0c935541)
+
+Login:
+
+![Screenshot 2024-12-15 184430](https://github.com/user-attachments/assets/dba1d47b-2715-4d81-bb94-f5e4385d1e72)
+
+Update User:
+
+![Screenshot 2024-12-15 184444](https://github.com/user-attachments/assets/200d17df-6701-4cfb-8f67-0ba82d8e1730)
+
+
+Delete User:
+
+![Screenshot 2024-12-15 184503](https://github.com/user-attachments/assets/f76a9f15-9b43-44a4-9a55-fd0286f097e5)
+
+Session Valdation:
+
+![Screenshot 2024-12-15 184517](https://github.com/user-attachments/assets/56f7a1de-a6d0-4aec-b62c-7e9d975b35d6)
+
+Add book:
+
+![Screenshot 2024-12-15 184534](https://github.com/user-attachments/assets/b034ca05-8697-407a-823a-df1bdf35608a)
+
+Retrieve books:
+
+![Screenshot 2024-12-15 184605](https://github.com/user-attachments/assets/5a1f0f4a-04c3-408a-9cf6-25883df9be52)
+
+Get books of author:
+
+![Screenshot 2024-12-15 184621](https://github.com/user-attachments/assets/71957f5b-484a-4e43-8cb0-a6584b2703db)
+
+update book details:
+
+![Screenshot 2024-12-15 184638](https://github.com/user-attachments/assets/dbd4c382-f5e8-4701-80f6-d8d27cace2b1)
+
+delete books:
+
+![Screenshot 2024-12-15 184651](https://github.com/user-attachments/assets/edb44b34-a898-46a0-9da8-719a57994b8f)
+
+reader profile:
+
+![Screenshot 2024-12-15 184702](https://github.com/user-attachments/assets/d7cc5af7-3277-44f4-afed-2b5cde63368c)
+
+borrow books:
+
+![Screenshot 2024-12-15 184725](https://github.com/user-attachments/assets/d9605f0f-da73-4db8-b9bf-c77d24241813)
+
+return books:
+
+![Screenshot 2024-12-15 184737](https://github.com/user-attachments/assets/b603ff7f-48c6-46b0-a964-293a358c8c3d)
+
+reader books:
+
+![Screenshot 2024-12-15 184751](https://github.com/user-attachments/assets/6d44bd35-c966-472a-80b1-56e1ed583607)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+some requests and responses:
+Signup:
+
+{
+    "name": "reader3",
+    "email": "reader3@example.com",
+    "password": "password123",
+    "role": "Author"
+}
+
+Response:
+
+{
+    "message": "Signup successful",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWU5ZDVjMjUyY2FiZDQ3ODRhMGFhNSIsImlhdCI6MTczNDI1MzkxNiwiZXhwIjoxNzM1NTQ5OTE2fQ.tGu_uwEKYbzBJUfpHevY8s9-AYgbYvDjHq4LokVe6gw"
+}
+
+
+
+
+
+
 
