@@ -41,33 +41,36 @@ Installation Steps:
 
 1.Clone the Repository:
 
-1.https://github.com/Akshith268/library-management-backend.git
+-->https://github.com/Akshith268/library-management-backend.git
 
-2.cd backend
+-->cd backend
 
 2.Install Dependencies:
 
-npm install
+-->npm install
 
-Set Up Environment Variables
+3.Set Up Environment Variables
 
+-->Create a .env file in the project root and configure the following:
 
-3.Create a .env file in the project root and configure the following:
+-------->PORT=5000
 
-PORT=5000
+-------->MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/library
 
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/library
-
-JWT_SECRET=your_jwt_secret
+-------->JWT_SECRET=your_jwt_secret
 
 
 4.Start the Server:
 
-run the command ----> node server.js
+-->run the command ----> node server.js
 
-The server will start at http://localhost:5000.
+-->The server will start at http://localhost:5000.
 
 --------------------------------------------------------------------------------------------------------------------
 
+
+
+SCREEN SHOTS:
+-------------------------------------------------------------------
 
 
