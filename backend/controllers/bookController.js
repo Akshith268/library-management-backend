@@ -29,12 +29,27 @@ exports.addBook = async (req, res) => {
 // Get all books
 exports.getAllBooks = async (req, res) => {
     try {
-        const books = await Book.find().populate('author', 'name');
+        const { title, author, genre } = req.query;
+
+        const searchFilter = {};
+        if (title) {
+            searchFilter.title = { $regex: title, $options: 'i' };
+        }
+        if (author) {
+            searchFilter.author = author;
+        }
+        if (genre) {
+            searchFilter.genre = { $regex: genre, $options: 'i' }; 
+        }
+
+        // Query the database with the filter
+        const books = await Book.find(searchFilter).populate('author', 'name'); // Populate only the author's name
         res.status(200).json(books);
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch books.' });
     }
 };
+
 
 // Get all books by a specific author
 exports.getBooksByAuthor = async (req, res) => {
@@ -59,28 +74,58 @@ exports.getBooksByAuthor = async (req, res) => {
 // Update a book
 exports.updateBook = async (req, res) => {
     try {
-        const { id } = req.params;
-        const updates = req.body;
+        const { id } = req.params; // Book ID
+        const updates = req.body; // Updates from request body
+        const userId = req.user.id; // ID of the logged-in user (from the token)
 
+        // Find the book and check if the user is the author
+        const book = await Book.findById(id);
+
+        if (!book) {
+            return res.status(404).json({ error: 'Book not found.' });
+        }
+
+        if (book.author.toString() !== userId) {
+            return res.status(403).json({ error: 'Unauthorized. Only the author can update this book.' });
+        }
+
+        console.log("Book found and user is the author");
+
+        // Update the book
         const updatedBook = await Book.findByIdAndUpdate(id, updates, { new: true });
-        if (!updatedBook) return res.status(404).json({ error: 'Book not found.' });
 
         res.status(200).json({ message: 'Book updated successfully.', updatedBook });
     } catch (error) {
+        console.log(error);
         res.status(500).json({ error: 'Failed to update book.' });
     }
 };
 
+
 // Delete a book
 exports.deleteBook = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { id } = req.params; // Book ID
+        const userId = req.user.id; // ID of the logged-in user (from the token)
 
-        const deletedBook = await Book.findByIdAndDelete(id);
-        if (!deletedBook) return res.status(404).json({ error: 'Book not found.' });
+        // Find the book to check if the user is the author
+        const book = await Book.findById(id);
+
+        if (!book) {
+            return res.status(404).json({ error: 'Book not found.' });
+        }
+
+        // Check if the logged-in user is the author of the book
+        if (book.author.toString() !== userId) {
+            return res.status(403).json({ error: 'Unauthorized. Only the author can delete this book.' });
+        }
+
+        // Delete the book
+        await Book.findByIdAndDelete(id);
 
         res.status(200).json({ message: 'Book deleted successfully.' });
     } catch (error) {
         res.status(500).json({ error: 'Failed to delete book.' });
     }
 };
+
