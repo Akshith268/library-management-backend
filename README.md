@@ -41,9 +41,9 @@ Installation Steps:
 
 1.Clone the Repository:
 
-https://github.com/Akshith268/library-management-backend.git
+1.https://github.com/Akshith268/library-management-backend.git
 
-cd backend
+2.cd backend
 
 2.Install Dependencies:
 
