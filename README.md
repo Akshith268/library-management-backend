@@ -130,6 +130,28 @@ reader books:
 
 ![Screenshot 2024-12-15 184751](https://github.com/user-attachments/assets/6d44bd35-c966-472a-80b1-56e1ed583607)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+some requests and responses:
+Signup:
+
+{
+    "name": "reader3",
+    "email": "reader3@example.com",
+    "password": "password123",
+    "role": "Author"
+}
+
+Response:
+
+{
+    "message": "Signup successful",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWU5ZDVjMjUyY2FiZDQ3ODRhMGFhNSIsImlhdCI6MTczNDI1MzkxNiwiZXhwIjoxNzM1NTQ5OTE2fQ.tGu_uwEKYbzBJUfpHevY8s9-AYgbYvDjHq4LokVe6gw"
+}
+
+
+
 
 
 
