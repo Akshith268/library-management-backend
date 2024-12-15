@@ -5,8 +5,8 @@ const User = require('../models/User');
 // Borrow a book
 exports.borrowBook = async (req, res) => {
   try {
-    const { bookId } = req.body;  // Assuming you're passing bookId in the body, adjust if in params
-    const userId = req.user.id;  // Assuming the user ID is added to the request by authenticateToken middleware
+    const { bookId } = req.body;  
+    const userId = req.user.id;  
 
     const user = await User.findById(userId);
     const book = await Book.findById(bookId);

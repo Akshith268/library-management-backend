@@ -5,7 +5,7 @@ const User = require('../models/User');
 exports.addBook = async (req, res) => {
     try {
         const { title, genre, stock } = req.body;
-        const authorId = req.user.id; // Retrieve from authenticated token
+        const authorId = req.user.id; 
 
         // Ensure the user is an Author
         const author = await User.findById(authorId);
@@ -42,8 +42,7 @@ exports.getAllBooks = async (req, res) => {
             searchFilter.genre = { $regex: genre, $options: 'i' }; 
         }
 
-        // Query the database with the filter
-        const books = await Book.find(searchFilter).populate('author', 'name'); // Populate only the author's name
+        const books = await Book.find(searchFilter).populate('author', 'name'); 
         res.status(200).json(books);
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch books.' });
@@ -74,11 +73,11 @@ exports.getBooksByAuthor = async (req, res) => {
 // Update a book
 exports.updateBook = async (req, res) => {
     try {
-        const { id } = req.params; // Book ID
-        const updates = req.body; // Updates from request body
-        const userId = req.user.id; // ID of the logged-in user (from the token)
+        const { id } = req.params; 
+        const updates = req.body; 
+        const userId = req.user.id; 
 
-        // Find the book and check if the user is the author
+
         const book = await Book.findById(id);
 
         if (!book) {
@@ -91,7 +90,7 @@ exports.updateBook = async (req, res) => {
 
         console.log("Book found and user is the author");
 
-        // Update the book
+
         const updatedBook = await Book.findByIdAndUpdate(id, updates, { new: true });
 
         res.status(200).json({ message: 'Book updated successfully.', updatedBook });
@@ -105,9 +104,9 @@ exports.updateBook = async (req, res) => {
 // Delete a book
 exports.deleteBook = async (req, res) => {
     try {
-        const { id } = req.params; // Book ID
-        const userId = req.user.id; // ID of the logged-in user (from the token)
-
+        const { id } = req.params; 
+        const userId = req.user.id; 
+        
         // Find the book to check if the user is the author
         const book = await Book.findById(id);
 

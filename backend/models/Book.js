@@ -9,7 +9,7 @@ const bookSchema = new mongoose.Schema({
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true, // Must reference an Author
+        required: true, 
     },
     genre: {
         type: String,
@@ -19,14 +19,14 @@ const bookSchema = new mongoose.Schema({
     stock: {
         type: Number,
         required: true,
-        min: 0, // Ensure stock cannot be negative
+        min: 0,
     },
     borrowedBy: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User', // References Readers
+            ref: 'User',
         }
-    ], // Track who has borrowed the book
+    ], 
 }, { timestamps: true });
 
 module.exports = mongoose.model('Book', bookSchema);
