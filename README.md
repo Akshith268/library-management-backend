@@ -41,11 +41,11 @@ cd backend
 
 2.Install Dependencies:
 npm install
-Set Up Environment Variables
 
 
-3.Create a .env file in the project root and configure the following:
-PORT=5000
+3.Set Up Environment Variables
+Create a .env file in the project root and configure the following:
+PORT=5000 <br/>
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/library
 JWT_SECRET=your_jwt_secret
 
