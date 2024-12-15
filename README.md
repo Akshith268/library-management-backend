@@ -29,29 +29,42 @@ Instructions to Set Up and Run the Project
 -------------------------------------------------------------------
 
 Prerequisites:
+
 Node.js (v16 or later)
+
 MongoDB (local or cloud-based)
+
 Postman (or any API testing tool) for testing endpoints
+
 --------------------------------------------------------------------
 Installation Steps:
 
 1.Clone the Repository:
+
 https://github.com/Akshith268/library-management-backend.git
+
 cd backend
 
 2.Install Dependencies:
+
 npm install
+
 Set Up Environment Variables
 
 
 3.Create a .env file in the project root and configure the following:
+
 PORT=5000
+
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/library
+
 JWT_SECRET=your_jwt_secret
 
 
 4.Start the Server:
+
 run the command ----> node server.js
+
 The server will start at http://localhost:5000.
 
 --------------------------------------------------------------------------------------------------------------------
