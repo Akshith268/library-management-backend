@@ -44,6 +44,7 @@ exports.returnBook = async (req, res) => {
     user.borrowedBooks = user.borrowedBooks.filter((id) => id.toString() !== bookId);
     book.stock += 1;
 
+
     await user.save();
     await book.save();
 

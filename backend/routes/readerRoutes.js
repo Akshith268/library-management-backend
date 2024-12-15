@@ -9,7 +9,7 @@ const router = express.Router();
 router.post('/profile', authController.signup); // Create a new Reader profile
 
 // Profile Management (authenticated access for updates)
-router.put('/profile', authenticateToken, authorizeRole('Reader'), userController.updateUser); // Update Reader details
+router.put('/profile/:id', authenticateToken, authorizeRole('Reader'), userController.updateUser); // Update Reader details
 // Borrow and Return Books
 router.post('/books/borrow', authenticateToken, authorizeRole('Reader'), borrowController.borrowBook); // Borrow a book
 router.post('/books/return', authenticateToken, authorizeRole('Reader'), borrowController.returnBook); // Return a borrowed book
