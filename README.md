@@ -73,4 +73,6 @@ Installation Steps:
 SCREEN SHOTS:
 -------------------------------------------------------------------
 
+Signup:
 
+![Screenshot 2024-12-15 184249](https://github.com/user-attachments/assets/bffe8d6f-0065-41f5-ab4b-fcbc0c935541)
